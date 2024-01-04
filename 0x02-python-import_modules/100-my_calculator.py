@@ -7,13 +7,17 @@ if __name__ == "__main__":
         exit(1)
     else:
         if sys.argv[2] == "+":
-            print("{} + {} = {}".format(sys.argv[1], sys.argv[3], add(int(sys.argv[1]), int(sys.argv[3]))))
+            result = add(int(sys.argv[1]), int(sys.argv[3]))
+            print("{} + {} = {}".format(sys.argv[1], sys.argv[3], result))
         elif sys.argv[2] == "-":
-            print("{} - {} = {}".format(sys.argv[1], sys.argv[3], sub(int(sys.argv[1]), int(sys.argv[3]))))
+            result = sub(int(sys.argv[1]), int(sys.argv[3]))
+            print("{} - {} = {}".format(sys.argv[1], sys.argv[3], result))
         elif sys.argv[2] == "*":
-            print("{} * {} = {}".format(sys.argv[1], sys.argv[3], mul(int(sys.argv[1]), int(sys.argv[3]))))
+            result = mul(int(sys.argv[1]), int(sys.argv[3]))
+            print("{} * {} = {}".format(sys.argv[1], sys.argv[3], result))
         elif sys.argv[2] == "/":
-            print("{} / {} = {}".format(sys.argv[1], sys.argv[3], div(int(sys.argv[1]), int(sys.argv[3]))))
+            result = div(int(sys.argv[1]), int(sys.argv[3]))
+            print("{} / {} = {}".format(sys.argv[1], sys.argv[3], result))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
