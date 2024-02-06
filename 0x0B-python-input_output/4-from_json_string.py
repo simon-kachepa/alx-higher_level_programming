@@ -9,6 +9,6 @@ def from_json_string(my_str):
         Args:
             my_str (str): JSON string
 
-            Return: an object (Python data structure) represented by a JSON string
+            Return:object (Python data structure) represented by a JSON string
     """
     return (json.loads(my_str))
