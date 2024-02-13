@@ -15,11 +15,11 @@ class Rectangle(Base):
                 x (int): x value of the new Rectangle
                 y (int):y value for the new Rectangle
         """
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -27,19 +27,19 @@ class Rectangle(Base):
         return (self.__width)
 
     @width.setter
-    def width(self, width):
+    def width(self, value):
         """Set the width of the current Rectangle
             Args:
                 width(int): The width of the current Rectangle
 
             Return: Nothing
         """
-        if not isinstance(width, int):
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif width <= 0:
+        elif value <= 0:
             raise ValueError("width must be > 0")
         else:
-            self.__width = width
+            self.__width = value
 
     @property
     def height(self):
@@ -68,7 +68,7 @@ class Rectangle(Base):
         return (self.__x)
 
     @x.setter
-    def x(self, x):
+    def x(self, value):
         """Setting the x value of the current Rectangle
 
             Args:
@@ -76,20 +76,20 @@ class Rectangle(Base):
             Return:
                 :Nothing
         """
-        if not isinstance(x, int):
+        if not isinstance(value, int):
             raise TypeError("x must be an integer")
-        elif x < 0:
+        elif value < 0:
             raise ValueError("x must be >= 0")
         else:
-            self.__x = x
+            self.__x = value
 
     @property
     def y(self):
         """Get the y value of the current Rectangle"""
-        return (self.__x)
+        return (self.__y)
 
     @y.setter
-    def y(self, y):
+    def y(self, value):
         """Setting the value of y
 
             Args:
@@ -98,9 +98,9 @@ class Rectangle(Base):
             Return:
                 :Nothing
         """
-        if not isinstance(y, int):
+        if not isinstance(value, int):
             raise TypeError("y must be an integer")
-        elif y < 0:
+        elif value < 0:
             raise ValueError("y must be >= 0")
         else:
-            self.__y = y
+            self.__y = value
