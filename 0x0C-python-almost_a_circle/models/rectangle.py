@@ -111,7 +111,11 @@ class Rectangle(Base):
 
     def display(self):
         """Displays the Rectangle with the character #"""
+        for a in range(self.y):
+            print()
         for i in range(0, self.height):
+            for b in range(self.x):
+                print(" ", end='')
             for j in range(0, self.width):
                 print("#", end='')
             print()
