@@ -126,13 +126,36 @@ class Rectangle(Base):
 
     def update(self, *args):
         """Collecting arguments and assigns to attributes"""
-        if len(args) == 1:
-            self.id = args[0]
-        elif len(args) == 2:
-            self.id, self.width = args
-        elif len(args) == 3:
-            self.id, self.width, self.height = args
-        elif len(args) == 4:
-            self.id, self.width, self.height, self.x = args
-        elif len(args) == 5:
-            self.id, self.width, self.height, self.x, self.y = args
+        if args and len(args) != 0:
+            a = 0
+            for arg in args:
+                if a == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif a == 1:
+                    self.width = arg
+                elif a == 2:
+                    self.height = arg
+                elif a == 3:
+                    self.x = arg
+                elif a == 4:
+                    self.y = arg
+                a += 1
+
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
